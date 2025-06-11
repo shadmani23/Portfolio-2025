@@ -50,8 +50,8 @@ export default function HeroSection() {
       <div className="grid grid-cols-12 gap-12 items-start">
         {/* Work + Role */}
         <div className="col-span-12 md:col-span-4">
-          <p className="text-sm mb-1">Current: JumpStartCSR</p>
-          <p className="text-sm text-muted-foreground">Role: Lead Product Designer</p>
+          <p className="text-sm lg:text-[20px] mb-1">Current: JumpStartCSR</p>
+          <p className="text-sm lg:text-[20px] text-muted-foreground">Role: Lead Product Designer</p>
         </div>
 
         {/* LinkedIn + Resume */}
@@ -61,11 +61,11 @@ export default function HeroSection() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-sm hover:opacity-70 transition-opacity"
+              className="block text-sm lg:text-[20px] hover:opacity-70 transition-opacity"
             >
               LinkedIn
             </a>
-            <a href="#" className="block text-sm hover:opacity-70 transition-opacity">
+            <a href="#" className="block text-sm lg:text-[20px] hover:opacity-70 transition-opacity">
               Resume
             </a>
           </div>
@@ -75,12 +75,12 @@ export default function HeroSection() {
         <div className="col-span-12 md:col-span-4">
           <button
             onClick={scrollToProjects}
-            className="flex items-center space-x-2 text-sm hover:opacity-70 transition-opacity group"
+            className="flex items-center space-x-2 text-sm lg:text-[20px] hover:opacity-70 transition-opacity group"
           >
             <span>Selected work</span>
             <ArrowDown size={16} className="transition-transform duration-300 group-hover:translate-y-1" />
           </button>
-          <p className="text-sm text-muted-foreground mt-2">2020 - Present</p>
+          <p className="text-sm lg:text-[20px] text-muted-foreground mt-2">2020 - Present</p>
         </div>
       </div>
     </section>

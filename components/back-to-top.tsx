@@ -98,5 +98,68 @@ export default function BackToTop({ sections = [] }: BackToTopProps) {
       <div className="flex flex-col items-end">
         {(menuOpen || isMenuTransitioning) && (
           <div
-            className={`bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg mb-2 overflow-hidden transition-all duration-300 ${\
-              isMenuTransitioning ? "opacity-0 transform translate-y\
+            className={`bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg mb-2 overflow-hidden transition-all duration-300 ${
+              isMenuTransitioning ? "opacity-0 transform translate-y-2" : "opacity-100 transform translate-y-0"
+            }`}
+          >
+            <div className="p-2">
+              {sections.map((section) => (
+                <button
+                  key={section.id}
+                  onClick={() => scrollToSection(section.id)}
+                  className={`block w-full text-left px-4 py-2 rounded-lg text-sm transition-colors ${
+                    activeSection === section.id
+                      ? "bg-gray-100 dark:bg-gray-800"
+                      : "hover:bg-gray-50 dark:hover:bg-gray-900"
+                  }`}
+                >
+                  {section.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        <button
+          onClick={toggleMenu}
+          className="relative w-12 h-12 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+        >
+          <svg
+            className="w-6 h-6 text-gray-600 dark:text-gray-300"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="text-gray-200 dark:text-gray-700"
+              strokeWidth="2"
+              stroke="currentColor"
+              fill="transparent"
+              r={circleRadius}
+              cx="12"
+              cy="12"
+            />
+            <circle
+              className="text-blue-500"
+              strokeWidth="2"
+              strokeDasharray={circumference}
+              strokeDashoffset={dashOffset}
+              strokeLinecap="round"
+              stroke="currentColor"
+              fill="transparent"
+              r={circleRadius}
+              cx="12"
+              cy="12"
+              transform="rotate(-90 12 12)"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 8v8M8 12h8"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  )
+}

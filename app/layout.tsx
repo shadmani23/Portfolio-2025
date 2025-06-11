@@ -14,7 +14,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Shadmani Shaikh | Independent Designer, Director",
-  description: "Portfolio of Shadmani Shaikh, Independent Designer and Director",
+  description: "Portfolio of Shadmani Shaikh, Product Designer",
     generator: 'v0.dev'
 }
 
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <CursorProvider>
             <div className="flex flex-col min-h-screen">
